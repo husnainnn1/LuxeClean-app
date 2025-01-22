@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price List - LuxeClean</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    const cart = [];
+
+    function addToCart(item, description, price) {
+      cart.push({ item, description, price });
+      alert(`${item} added to cart!`);
+      console.log("Current Cart:", cart);
+    }
+  </script>
+</head>
+<body class="price-list-body">
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <nav>
+      <button class="btn" onclick="window.location='/'">Home</button>
+      <button class="btn" onclick="window.location='/ai-recommendation'">AI Recommendation</button>
+      <button class="btn" onclick="window.location='/cart'">Cart</button>
+      <button class="btn" onclick="window.location='/authentication/logout'">Logout</button>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <header class="price-list-header">
+    <h1>Our Comprehensive Price List</h1>
+    <p>Explore our extensive range of services and competitive rates for premium dry cleaning and laundry services.</p>
+  </header>
+
+  <!-- Price List Section -->
+  <main class="price-list-container">
+    <!-- Clothing Section -->
+    <section class="price-list-section">
+      <h2>Clothing</h2>
+      <table class="price-list-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Add To Cart</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suit</td>
+            <td>Two-piece suit dry cleaning</td>
+            <td>£12.00</td>
+            <td>
+              <form action="/cart/add" method="POST">
+                <input type="hidden" name="item" value="Suit">
+                <input type="hidden" name="description" value="Two-piece suit dry cleaning">
+                <input type="hidden" name="price" value="£12.00">
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td>Dress</td>
+            <td>Evening dress cleaning</td>
+            <td>£15.00</td>
+            <td>
+              <form action="/cart/add" method="POST">
+                <input type="hidden" name="item" value="Dress">
+                <input type="hidden" name="description" value="Evening dress cleaning">
+                <input type="hidden" name="price" value="£15.00">
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td>Shirt</td>
+            <td>Laundry and ironing</td>
+            <td>£3.50</td>
+            <td>
+              <form action="/cart/add" method="POST">
+                <input type="hidden" name="item" value="Shirt">
+                <input type="hidden" name="description" value="Laundry and ironing">
+                <input type="hidden" name="price" value="£3.50">
+                <button type="submit" class="btn">Add to Cart</button>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td>Blouse</td>
+            <td>Delicate fabric cleaning</td>
+            <td>£5.00</td>
+            <td><button class="btn" onclick="addToCart('Blouse', 'Delicate fabric cleaning', '£5.00')">Add to Cart</button></td>
+          </tr>
+          <tr>
+            <td>Trousers</td>
+            <td>Formal trouser dry cleaning</td>
+            <td>£6.00</td>
+            <td><button class="btn" onclick="addToCart('Trousers', 'Formal trouser dry cleaning', '£6.00')">Add to Cart</button></td>
+          </tr>
+          <tr>
+            <td>Coat</td>
+            <td>Heavy coat cleaning</td>
+            <td>£14.00</td>
+            <td><button class="btn" onclick="addToCart('Coat', 'Heavy coat cleaning', '£14.00')">Add to Cart</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Household Items Section -->
+    <section class="price-list-section">
+      <h2>Household Items</h2>
+      <table class="price-list-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Curtains</td>
+            <td>Dry cleaning per kg</td>
+            <td>£10.00</td>
+          </tr>
+          <tr>
+            <td>Tablecloth</td>
+            <td>Cleaning and ironing</td>
+            <td>£8.00</td>
+          </tr>
+          <tr>
+            <td>Bed Sheet</td>
+            <td>Laundry and pressing</td>
+            <td>£6.00</td>
+          </tr>
+          <tr>
+            <td>Duvet</td>
+            <td>Heavy-duty cleaning</td>
+            <td>£18.00</td>
+          </tr>
+          <tr>
+            <td>Pillow</td>
+            <td>Cleaning and fluffing</td>
+            <td>£4.00</td>
+          </tr>
+          <tr>
+            <td>Blanket</td>
+            <td>Thick blanket cleaning</td>
+            <td>£15.00</td>
+          </tr>
+          <tr>
+            <td>Cushion Cover</td>
+            <td>Delicate cleaning</td>
+            <td>£3.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Alterations Section -->
+    <section class="price-list-section">
+      <h2>Alterations</h2>
+      <table class="price-list-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trouser Hemming</td>
+            <td>Shortening trousers</td>
+            <td>£7.50</td>
+          </tr>
+          <tr>
+            <td>Zip Replacement</td>
+            <td>Replacing zips</td>
+            <td>£10.00</td>
+          </tr>
+          <tr>
+            <td>Jacket Lining</td>
+            <td>Replace jacket lining</td>
+            <td>£25.00</td>
+          </tr>
+          <tr>
+            <td>Dress Adjustment</td>
+            <td>Shorten or adjust dresses</td>
+            <td>£15.00</td>
+          </tr>
+          <tr>
+            <td>Button Replacement</td>
+            <td>Replacing missing buttons</td>
+            <td>£2.00 per button</td>
+          </tr>
+          <tr>
+            <td>Patch Repairs</td>
+            <td>Small patch repair</td>
+            <td>£5.00</td>
+          </tr>
+          <tr>
+            <td>Waist Adjustment</td>
+            <td>Resize trousers or skirts</td>
+            <td>£12.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Specialty Items Section -->
+    <section class="price-list-section">
+      <h2>Specialty Items</h2>
+      <table class="price-list-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wedding Dress</td>
+            <td>Delicate and intricate cleaning</td>
+            <td>£80.00</td>
+          </tr>
+          <tr>
+            <td>Leather Jacket</td>
+            <td>Specialist leather cleaning</td>
+            <td>£35.00</td>
+          </tr>
+          <tr>
+            <td>Silk Scarf</td>
+            <td>Hand wash and delicate care</td>
+            <td>£7.00</td>
+          </tr>
+          <tr>
+            <td>Rug</td>
+            <td>Per square meter</td>
+            <td>£10.00</td>
+          </tr>
+          <tr>
+            <td>Soft Toys</td>
+            <td>Delicate cleaning</td>
+            <td>£5.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 LuxeClean. All rights reserved.</p>
+  </footer>
+</body>
+</html>

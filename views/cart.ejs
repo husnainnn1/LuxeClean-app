@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - LuxeClean</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <button class="btn" onclick="window.location='/'">Home</button>
+            <button class="btn" onclick="window.location='/price-list'">Price List</button>
+            <button class="btn" onclick="window.location='/authentication/logout'">Logout</button>
+        </nav>
+    </div>
+
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+    <main>
+        <table class="price-list-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (cart.length > 0) { %>
+                    <% cart.forEach(item => { %>
+                        <tr>
+                            <td><%= item.item %></td>
+                            <td><%= item.description %></td>
+                            <td><%= item.price %></td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="3">Your cart is empty.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <% if (cart.length > 0) { %>
+            <form action="/cart/clear" method="POST">
+                <button type="submit" class="btn">Clear Cart</button>
+            </form>
+        <% } %>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 LuxeClean. All rights reserved.</p>
+    </footer>
+</body>
+</html>

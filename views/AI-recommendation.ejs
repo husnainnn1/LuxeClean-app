@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Service Recommendation</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="ai-recommendation-body">
+    <!-- Back Button -->
+  <div class="back-button-container">
+    <button class="back-button" onclick="history.back()">
+      &#8592; Back
+    </button>
+  </div>
+  <div class="ai-recommendation-container">
+    <h1 class="ai-recommendation-title">AI Service Recommendation</h1>
+    <form action="/AI-recommendation/calculate" method="POST" class="ai-recommendation-form">
+
+      <!-- Clothing Type -->
+      <div class="ai-form-group">
+        <label for="clothing-type" class="ai-form-label">What type of clothing or item do you need cleaned?</label>
+        <select id="clothing-type" name="clothing-type" class="ai-form-input">
+          <option value="Shirts">Shirts</option>
+          <option value="Trousers">Trousers</option>
+          <option value="Dresses">Dresses</option>
+          <option value="Suits">Suits</option>
+          <option value="Curtains">Curtains</option>
+          <option value="Bedding">Bedding</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Fabric Type -->
+      <div class="ai-form-group">
+        <label for="fabric-type" class="ai-form-label">What type of fabric is your item made of?</label>
+        <select id="fabric-type" name="fabric-type" class="ai-form-input">
+          <option value="Cotton">Cotton</option>
+          <option value="Wool">Wool</option>
+          <option value="Silk">Silk</option>
+          <option value="Synthetic">Synthetic</option>
+          <option value="Linen">Linen</option>
+          <option value="Leather">Leather</option>
+        </select>
+      </div>
+
+      <!-- Cleaning Type -->
+      <div class="ai-form-group">
+        <label for="cleaning-type" class="ai-form-label">Do you have a preferred cleaning method?</label>
+        <select id="cleaning-type" name="cleaning-type" class="ai-form-input">
+          <option value="Dry cleaning">Dry cleaning</option>
+          <option value="Wet cleaning">Wet cleaning</option>
+          <option value="Steam cleaning">Steam cleaning</option>
+          <option value="Eco-friendly cleaning">Eco-friendly cleaning</option>
+        </select>
+      </div>
+
+      <!-- Clothing Condition -->
+      <div class="ai-form-group">
+        <label for="clothing-condition" class="ai-form-label">What is the current condition of the clothing?</label>
+        <select id="clothing-condition" name="clothing-condition" class="ai-form-input">
+          <option value="Lightly soiled">Lightly soiled</option>
+          <option value="Moderately soiled">Moderately soiled</option>
+          <option value="Heavily soiled">Heavily soiled</option>
+          <option value="Stained">Stained</option>
+        </select>
+      </div>
+
+      <!-- Stain Type -->
+      <div class="ai-form-group">
+        <label for="stain-type" class="ai-form-label">Are there any specific stains that need to be addressed?</label>
+        <select id="stain-type" name="stain-type" class="ai-form-input">
+          <option value="None">No specific stains</option>
+          <option value="Food stains">Food stains</option>
+          <option value="Wine stains">Wine stains</option>
+          <option value="Ink stains">Ink stains</option>
+          <option value="Oil/Grease stains">Oil/Grease stains</option>
+        </select>
+      </div>
+
+      <!-- Urgency -->
+      <div class="ai-form-group">
+        <label for="urgency" class="ai-form-label">How soon do you need the clothing cleaned?</label>
+        <select id="urgency" name="urgency" class="ai-form-input">
+          <option value="Standard">Standard (2–3 days)</option>
+          <option value="Express">Express (Next day)</option>
+          <option value="Same-day">Same-day service</option>
+        </select>
+      </div>
+
+      <!-- Special Instructions -->
+      <div class="ai-form-group">
+        <label for="special-instructions" class="ai-form-label">Does the item have any special care instructions?</label>
+        <textarea id="special-instructions" name="special-instructions" class="ai-form-input" rows="4" placeholder="Enter any special care instructions"></textarea>
+      </div>
+
+      <!-- Packaging Preference -->
+      <div class="ai-form-group">
+        <label for="packaging-preference" class="ai-form-label">How would you like your items returned?</label>
+        <select id="packaging-preference" name="packaging-preference" class="ai-form-input">
+          <option value="On hangers">On hangers</option>
+          <option value="Folded in bags">Folded in bags</option>
+          <option value="Vacuum-sealed">Vacuum-sealed packaging</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="ai-form-button">Calculate Service</button>
+    </form>
+  </div>
+</body>
+</html>
